@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="weather-card">
+
+      <h1>Weather App</h1>
+      <p class="subtitle">Check the weather anywhere</p>
+
+      <!-- Search -->
+      <div class="search-box">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter city name"
+        />
+
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button id="unitBtn">°C / °F</button>
+        <button id="locationBtn">📍 Use My Location</button>
+      </div>
+
+      <!-- Weather -->
+      <section class="weather-result">
+
+        <div id="city"></div>
+
+        <img
+          src=""
+          id="WeatherIcon"
+          alt="Weather icon"
+        />
+
+        <div id="temperature"></div>
+
+        <i id="description"></i>
+
+        <div class="weather-details">
+          <div id="humidity"></div>
+          <div id="feels_like"></div>
+          <div id="wind-speed"></div>
+        </div>
+
+      </section>
+
+      <!-- Search History -->
+      <section class="history-section">
+
+        <div class="history-header">
+          <h3>Recent Searches</h3>
+          <button id="clearHistoryBtn">Clear All</button>
+        </div>
+
+        <ul id="searchHistory"></ul>
+
+      </section>
+
+    </main>
+
+    <script src="async.js"></script>
+  </body>
+</html>

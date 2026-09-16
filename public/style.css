@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #74ebd5,
+        #9face6
+    );
+}
+
+
+/* =========================
+   Weather Card
+========================= */
+
+.weather-card {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   Heading
+========================= */
+
+.weather-card h1 {
+    text-align: center;
+
+    font-size: 32px;
+
+    color: #1f2937;
+
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   Search
+========================= */
+
+.search-box {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+}
+
+#cityInput {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+#cityInput:focus {
+    border-color: #3498db;
+
+    box-shadow:
+        0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+button {
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#searchBtn {
+    padding: 12px 18px;
+
+    background: #3498db;
+
+    color: white;
+
+    font-weight: 600;
+}
+
+#searchBtn:hover {
+    background: #2980b9;
+}
+
+
+/* =========================
+   Controls
+========================= */
+
+.controls {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+#unitBtn,
+#locationBtn {
+    flex: 1;
+
+    padding: 11px;
+
+    background: #eef6ff;
+
+    color: #2563eb;
+
+    font-weight: 600;
+}
+
+#locationBtn {
+    color: #047857;
+
+    background: #ecfdf5;
+}
+
+
+/* =========================
+   Weather Result
+========================= */
+
+.weather-result {
+    text-align: center;
+
+    padding: 10px 0 20px;
+}
+
+#city {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+#WeatherIcon {
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: contain;
+
+    margin: 5px auto;
+}
+
+#temperature {
+    font-size: 48px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+#description {
+    display: block;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    color: #6b7280;
+
+    text-transform: capitalize;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   Weather Details
+========================= */
+
+.weather-details {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.weather-details div {
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #374151;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   History
+========================= */
+
+.history-section {
+    border-top: 1px solid #e5e7eb;
+
+    padding-top: 20px;
+}
+
+.history-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+.history-header h3 {
+    font-size: 18px;
+
+    color: #1f2937;
+}
+
+#clearHistoryBtn {
+    padding: 7px 10px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   History List
+========================= */
+
+#searchHistory {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+#searchHistory li {
+    display: flex;
+
+    gap: 7px;
+}
+
+#searchHistory li button:first-child {
+    flex: 1;
+
+    padding: 9px 12px;
+
+    text-align: left;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    font-weight: 500;
+}
+
+#searchHistory li button:last-child {
+    width: 35px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   Disabled Button
+========================= */
+
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 480px) {
+
+    .weather-card {
+        padding: 22px;
+    }
+
+    .weather-card h1 {
+        font-size: 27px;
+    }
+
+    #temperature {
+        font-size: 42px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    #searchBtn {
+        width: 100%;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+}
